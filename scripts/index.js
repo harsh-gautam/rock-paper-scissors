@@ -26,6 +26,7 @@ const winnerText = document.querySelector(".winner-text");
 const playerScore = document.querySelector(".player-score");
 const computerScore = document.querySelector(".computer-score");
 const roundInfo = document.querySelector(".round");
+const restartBtn = document.querySelector("#restart");
 
 let round = 0;
 roundInfo.innerText = round;
@@ -38,7 +39,6 @@ let finalWinner = "";
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     if (gameEnded(round)) return;
-
     playerChoice = e.target.innerText.toLowerCase();
     computerChoice = computerPlay();
 
@@ -67,12 +67,12 @@ function gameEnded(round) {
       finalWinner = "Game ends in draw";
     } else finalWinner = "You won the game";
     winnerText.innerText = finalWinner;
+    restartBtn.classList.toggle("invisible");
     return true;
   }
   return false;
 }
 
-const restartBtn = document.querySelector("#restart");
 restartBtn.addEventListener("click", () => {
   winnerText.innerText = "";
   computerWinCount = 0;
@@ -81,6 +81,7 @@ restartBtn.addEventListener("click", () => {
   playerScore.innerText = 0;
   round = 0;
   roundInfo.innerText = round;
+  restartBtn.classList.toggle("invisible");
 });
 
 // console.log(playRound(playerSelection, computerSelection));

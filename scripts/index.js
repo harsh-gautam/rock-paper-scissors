@@ -25,9 +25,12 @@ const buttons = document.querySelectorAll(".choice-btn");
 const winnerText = document.querySelector(".winner-text");
 const playerScore = document.querySelector(".player-score");
 const computerScore = document.querySelector(".computer-score");
+const roundInfo = document.querySelector(".round");
+
+let round = 0;
+roundInfo.innerText = round;
 
 let playerChoice = "";
-let round = 0;
 let computerWinCount = 0;
 let playerWinCount = 0;
 let finalWinner = "";
@@ -59,6 +62,7 @@ buttons.forEach((button) => {
       playerScore.innerText = playerWinCount;
     }
     round++;
+    roundInfo.innerText = round;
   });
 });
 

@@ -23,31 +23,31 @@ function playRound(playerSelection, computerSelection) {
 
 // console.log(playRound(playerSelection, computerSelection));
 
-function game() {
-  let computerWinCount = 0;
-  let playerWinCount = 0;
-  for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt("Enter your choice?");
-    let computerSelection = computerPlay();
-    winner = playRound(playerSelection.toLowerCase(), computerSelection);
-    console.log(winner);
-    if (winner.startsWith("Draw!")) {
-      i--;
-      continue;
-    }
-    if (winner.startsWith("You Lose")) {
-      computerWinCount++;
-    } else {
-      playerWinCount++;
-    }
-  }
-  if (computerWinCount > playerWinCount) {
-    console.log("You win!");
-  } else if (computerWinCount === playerWinCount) {
-    console.log("Draw!");
-  } else {
-    console.log("You lose!");
-  }
-}
+// function game() {
+//   let computerWinCount = 0;
+//   let playerWinCount = 0;
+//   for (let i = 0; i < 5; i++) {
+//     let playerSelection = prompt("Enter your choice?");
+//     let computerSelection = computerPlay();
+//     winner = playRound(playerSelection.toLowerCase(), computerSelection);
+//     console.log(winner);
+//     if (winner.startsWith("Draw!")) {
+//       i--;
+//       continue;
+//     }
+//     if (winner.startsWith("You Lose")) {
+//       computerWinCount++;
+//     } else {
+//       playerWinCount++;
+//     }
+//   }
+//   if (computerWinCount > playerWinCount) {
+//     console.log("You win!");
+//   } else if (computerWinCount === playerWinCount) {
+//     console.log("Draw!");
+//   } else {
+//     console.log("You lose!");
+//   }
+// }
 
-game();
+// game();

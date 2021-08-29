@@ -20,6 +20,7 @@ function playRound(playerSelection, computerSelection) {
     return "Draw!";
   }
 }
+
 const buttons = document.querySelectorAll(".choice-btn");
 const winnerText = document.querySelector(".winner-text");
 const playerScore = document.querySelector(".player-score");
@@ -33,8 +34,19 @@ let finalWinner = "";
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
+    if (round === 5) {
+      if (computerWinCount > playerWinCount) {
+        finalWinner = "Computer won the game";
+      } else if (computerWinCount === playerWinCount) {
+        finalWinner = "Game ends in draw";
+      } else finalWinner = "You won the game";
+      winnerText.innerText = finalWinner;
+      return;
+    }
+
     playerChoice = e.target.innerText.toLowerCase();
     computerChoice = computerPlay();
+
     let result = playRound(playerChoice, computerChoice);
     winnerText.innerText = result;
 

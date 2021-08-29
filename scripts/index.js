@@ -62,6 +62,16 @@ buttons.forEach((button) => {
   });
 });
 
+const restartBtn = document.querySelector("#restart");
+restartBtn.addEventListener("click", () => {
+  winnerText.innerText = "";
+  computerWinCount = 0;
+  playerWinCount = 0;
+  computerScore.innerText = 0;
+  playerScore.innerText = 0;
+  round = 0;
+});
+
 // console.log(playRound(playerSelection, computerSelection));
 
 // function game() {

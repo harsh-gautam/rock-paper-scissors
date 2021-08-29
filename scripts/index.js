@@ -55,7 +55,10 @@ buttons.forEach((button) => {
     }
     round++;
     roundInfo.innerText = round;
-    if (gameEnded(round)) return;
+    if (gameEnded(round)) {
+      restartBtn.classList.toggle("invisible");
+      return;
+    }
   });
 });
 
@@ -67,7 +70,6 @@ function gameEnded(round) {
       finalWinner = "Game ends in draw";
     } else finalWinner = "You won the game";
     winnerText.innerText = finalWinner;
-    restartBtn.classList.toggle("invisible");
     return true;
   }
   return false;

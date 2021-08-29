@@ -37,15 +37,7 @@ let finalWinner = "";
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    if (round === 5) {
-      if (computerWinCount > playerWinCount) {
-        finalWinner = "Computer won the game";
-      } else if (computerWinCount === playerWinCount) {
-        finalWinner = "Game ends in draw";
-      } else finalWinner = "You won the game";
-      winnerText.innerText = finalWinner;
-      return;
-    }
+    if (gameEnded(round)) return;
 
     playerChoice = e.target.innerText.toLowerCase();
     computerChoice = computerPlay();
@@ -63,8 +55,22 @@ buttons.forEach((button) => {
     }
     round++;
     roundInfo.innerText = round;
+    if (gameEnded(round)) return;
   });
 });
+
+function gameEnded(round) {
+  if (round === 5) {
+    if (computerWinCount > playerWinCount) {
+      finalWinner = "Computer won the game";
+    } else if (computerWinCount === playerWinCount) {
+      finalWinner = "Game ends in draw";
+    } else finalWinner = "You won the game";
+    winnerText.innerText = finalWinner;
+    return true;
+  }
+  return false;
+}
 
 const restartBtn = document.querySelector("#restart");
 restartBtn.addEventListener("click", () => {
@@ -74,6 +80,7 @@ restartBtn.addEventListener("click", () => {
   computerScore.innerText = 0;
   playerScore.innerText = 0;
   round = 0;
+  roundInfo.innerText = round;
 });
 
 // console.log(playRound(playerSelection, computerSelection));

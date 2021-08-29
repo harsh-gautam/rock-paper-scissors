@@ -1,0 +1,78 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  height: 100vh;
+}
+#header > h1 {
+  font-size: 4rem;
+}
+
+#container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.choice-btn {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin: 5px 10px;
+  background-color: azure;
+  border: 1px solid rgb(180, 235, 235);
+}
+
+.choice-btn:hover {
+  cursor: pointer;
+  background-color: rgb(180, 235, 235);
+  transition: ease-in 1s;
+}
+
+.round-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#restart {
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  margin: 20px auto;
+  background-color: red;
+  border: 1px solid red;
+  color: white;
+}
+
+#restart:hover {
+  cursor: pointer;
+}
+
+.score-count {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.score-count > h3 {
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.invisible {
+  display: none;
+}
+
+.winner {
+  color: chartreuse;
+}

@@ -31,15 +31,23 @@ body {
   transition: ease-in 1s;
 }
 
-.round-text {
+.winner-text-wrapper {
+  margin: 20px;
+}
+
+.winner-text {
   font-size: 2rem;
+}
+
+.round-text {
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 #restart {
   font-size: 1.2rem;
   padding: 5px 10px;
-  margin: 20px auto;
+  margin-bottom: 25px;
   background-color: red;
   border: 1px solid red;
   color: white;
@@ -52,7 +60,6 @@ body {
 .score-count {
   display: flex;
   flex-direction: row;
-  margin: 10px;
 }
 
 .score-count > h3 {

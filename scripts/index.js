@@ -20,6 +20,35 @@ function playRound(playerSelection, computerSelection) {
     return "Draw!";
   }
 }
+const buttons = document.querySelectorAll(".choice-btn");
+const winnerText = document.querySelector(".winner-text");
+const playerScore = document.querySelector(".player-score");
+const computerScore = document.querySelector(".computer-score");
+
+let playerChoice = "";
+let round = 0;
+let computerWinCount = 0;
+let playerWinCount = 0;
+let finalWinner = "";
+
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    playerChoice = e.target.innerText.toLowerCase();
+    computerChoice = computerPlay();
+    let result = playRound(playerChoice, computerChoice);
+    winnerText.innerText = result;
+
+    if (result.startsWith("You Lose")) {
+      computerWinCount++;
+      computerScore.innerText = computerWinCount;
+    } else if (result.startsWith("Draw!")) {
+    } else {
+      playerWinCount++;
+      playerScore.innerText = playerWinCount;
+    }
+    round++;
+  });
+});
 
 // console.log(playRound(playerSelection, computerSelection));
 
